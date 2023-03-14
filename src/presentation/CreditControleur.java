@@ -2,9 +2,15 @@ package presentation;
 
 import matier.CreditMetier;
 import matier.IMetier;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class CreditControleur implements ICreditControleur{
-    CreditControleur Iconroleur;
+    @Autowired
+            @Qualifier("metier")
+   // CreditControleur Iconroleur;
     //CreditMetier creditMetier;
     IMetier creditMetier;
     public IMetier setCreditMetier(IMetier metier){

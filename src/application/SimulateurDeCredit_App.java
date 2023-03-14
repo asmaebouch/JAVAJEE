@@ -5,8 +5,12 @@ import dao.CreditDao;
 import dao.IDao;
 import matier.CreditMetier;
 import matier.IMetier;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import presentation.CreditControleur;
 import presentation.ICreditControleur;
+import scala.App;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -65,7 +69,7 @@ public static void test2() throws Exception {
     String controllerClass;
     Properties properties = new Properties();
     ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
-    InputStream properttiesFile = classLoader.getResourceAsStream("application/config.properties");
+    InputStream properttiesFile = classLoader.getResourceAsStream("config.properties");
 
     if (properttiesFile == null) throw new Exception("fichier config introuvable!!!");
     else {
@@ -104,9 +108,20 @@ public static void test2() throws Exception {
         e.printStackTrace();
 }
 }
-
+public static void test3() throws Exception{
+    ApplicationContext context =new ClassPathXmlApplicationContext("spring-ioc.xml");
+    creditControleur =(ICreditControleur) context.getBean("controleur");
+    creditControleur.afficher_Menduaalite(1L);
+}public static void test4() throws Exception{
+        ApplicationContext context =new AnnotationConfigApplicationContext("dao","matier","presentation");
+        creditControleur =(ICreditControleur) context.getBean(ICreditControleur.class);
+        creditControleur.afficher_Menduaalite(1L);
+    }
     public static void main(String[] args) throws Exception {
        // test1();
-        test2();
+        //test2();
+        //test3();
+        test4();
+        
     }
 }

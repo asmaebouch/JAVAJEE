@@ -3,8 +3,15 @@ package matier;
 import dao.Credit;
 import dao.CreditDao;
 import dao.IDao;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
+@Service("metier")
 public class CreditMetier implements IMetier{
+    @Autowired
+            @Qualifier("dao")
     IDao<Credit,Long> creditDao;
     public IDao<Credit, Long> setCreditDao(IDao<Credit,Long> dao){
      return this.creditDao=dao;

@@ -1,5 +1,10 @@
 package dao;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data  @NoArgsConstructor
 public class Credit {
     private Long id;
     private Double capilate_Emprunte;
