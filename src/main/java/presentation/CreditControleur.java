@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 
 @Controller
 public class CreditControleur implements ICreditControleur{
-    @Autowired
-            @Qualifier("metier")
+   @Autowired
+        @Qualifier("metier")
    // CreditControleur Iconroleur;
     //CreditMetier creditMetier;
     IMetier creditMetier;
