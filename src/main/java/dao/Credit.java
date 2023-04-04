@@ -10,17 +10,18 @@ public class Credit {
     private Double capilate_Emprunte;
     private Integer nombre_Mois;
     private Double taux_Mensuel;
-    private String nom_Demandeur;
+    private Client nom_Demandeur;
     private Double mensualite;
    public Double setMensualite(Double mensualite){
        return this.mensualite=mensualite;
     }
-  public   Credit(Long id,Double capilate_Emprunte,Integer nombre_Mois,Double taux_Mensuel,String nom_Demandeur,Double mensualite){
+  public   Credit(Long id,Double capilate_Emprunte,Integer nombre_Mois,Double taux_Mensuel,Client nom_Demandeur,Double mensualite){
       this.id=id;
       this.capilate_Emprunte=capilate_Emprunte;
       this.nombre_Mois=nombre_Mois;
       this.taux_Mensuel=taux_Mensuel;
       this.nom_Demandeur=nom_Demandeur;
+    //  this.nom_Demandeur= String.valueOf(nom_Demandeur);
       this.mensualite=mensualite;
 
   }
@@ -38,7 +39,7 @@ public class Credit {
     public  Double getcapilate_Emprunte(){
       return capilate_Emprunte;
      }
-    public  String getnom_Demandeur(){
+    public  Client getnom_Demandeur(){
       return nom_Demandeur;
      }
     public  Double getmensualite(){
@@ -54,7 +55,8 @@ public class Credit {
                 ", capilate_Emprunte=" + capilate_Emprunte +
                 ", nombre_Mois=" + nombre_Mois +
                 ", taux_Mensuel=" + taux_Mensuel +
-                ", nom_Demandeur='" + nom_Demandeur + '\'' +
+                ", nom_Demandeur='" + nom_Demandeur.nom +
+                ", prenom_Demandeur='"+nom_Demandeur.prenom+'\'' +
                 ", mensualite=" + mensualite +
                 '}';
     }

@@ -35,3 +35,6 @@ public class CreditMetier implements IMetier{
     }
 
 }
+//DAO = dao.CreditDao
+//SERVICE = matier.CreditMetier
+//CONTROLLER = presentation.CreditControleur

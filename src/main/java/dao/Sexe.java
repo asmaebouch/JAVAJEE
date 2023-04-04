@@ -1,2 +1,6 @@
-package dao;public enum Sexe {
+package dao;
+
+public enum Sexe {
+    HOMME,FEMME
+    ;
 }

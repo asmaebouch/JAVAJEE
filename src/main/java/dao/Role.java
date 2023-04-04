@@ -1,2 +1,5 @@
-package dao;public enum Role {
+package dao;
+
+public enum Role {
+    CLIENT,ADMIN;
 }

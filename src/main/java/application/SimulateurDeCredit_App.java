@@ -34,7 +34,7 @@ public class SimulateurDeCredit_App {
     }
 
     public static void test1() {
-        var dao = new CreditDao();
+        var dao =new CreditDao();
         var metier = new CreditMetier();
         var controleur = new CreditControleur();
         //injection des dependances
@@ -62,7 +62,7 @@ public class SimulateurDeCredit_App {
         } while (!rep.equalsIgnoreCase("oui"));
         System.out.println("Au revoir ^_^");
     }
-public static void test2() throws Exception {
+/*public static void test2() throws Exception {
 
     String daoClass;
     String serviceClass;
@@ -107,7 +107,7 @@ public static void test2() throws Exception {
     catch (Exception e){
         e.printStackTrace();
 }
-}
+}*/
 public static void test3() throws Exception{
     ApplicationContext context =new ClassPathXmlApplicationContext("spring-ioc.xml");
     creditControleur =(ICreditControleur) context.getBean("controleur");

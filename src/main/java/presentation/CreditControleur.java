@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class CreditControleur implements ICreditControleur{
+public class CreditControleur implements presentation.ICreditControleur {
    @Autowired
         @Qualifier("metier")
    // CreditControleur Iconroleur;
