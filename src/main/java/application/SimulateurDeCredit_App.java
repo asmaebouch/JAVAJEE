@@ -3,6 +3,7 @@ package application;
 import dao.Credit;
 import dao.CreditDao;
 import dao.IDao;
+import dao.exceptions.DaoException;
 import matier.CreditMetier;
 import matier.IMetier;
 import org.springframework.context.ApplicationContext;
@@ -56,6 +57,8 @@ public class SimulateurDeCredit_App {
                 controleur.afficher_Menduaalite(id);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
+            } catch (DaoException e) {
+                throw new RuntimeException(e);
             }
             System.out.println("Voulez vous quittez(oui / non)?");
             rep = clavier.nextLine();
@@ -108,16 +111,16 @@ public class SimulateurDeCredit_App {
         e.printStackTrace();
 }
 }*/
-public static void test3() throws Exception{
+public static void test3() throws Exception, DaoException {
     ApplicationContext context =new ClassPathXmlApplicationContext("spring-ioc.xml");
     creditControleur =(ICreditControleur) context.getBean("controleur");
     creditControleur.afficher_Menduaalite(1L);
-}public static void test4() throws Exception{
+}public static void test4() throws Exception, DaoException {
         ApplicationContext context =new AnnotationConfigApplicationContext("dao","matier","presentation");
         creditControleur =(ICreditControleur) context.getBean(ICreditControleur.class);
         creditControleur.afficher_Menduaalite(1L);
     }
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception, DaoException {
        // test1();
         //test2();
         //test3();

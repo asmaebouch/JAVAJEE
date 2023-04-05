@@ -16,7 +16,7 @@ public class MySqlSessionFactory extends DaoFactory {
     private static IDao<Client, Long> CLIENT_DAO = null;
     private static IDao<Credit, Long> CREDIT_DAO = null;
     private static IDao<Utilisateur, Long> USER_DAO = null;
-    private MySqlSessionFactory() throws DaoConfigException, Exception {
+    public MySqlSessionFactory() throws DaoConfigException, Exception {
 
     try {
         ClassLoader cl = Thread.currentThread().getContextClassLoader();

@@ -3,6 +3,7 @@ package matier;
 import dao.Credit;
 import dao.CreditDao;
 import dao.IDao;
+import dao.exceptions.DaoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -19,7 +20,7 @@ public class CreditMetier implements IMetier{
 
 
     @Override
-    public Credit calculer_Mensualite(Long idCredit) throws Exception {
+    public Credit calculer_Mensualite(Long idCredit) throws Exception, DaoException {
    var credit = creditDao.trouveParId(idCredit);
    if(credit == null) throw new Exception("L'id du credit est incorrecte :: [Credit non trouve]");
    else{

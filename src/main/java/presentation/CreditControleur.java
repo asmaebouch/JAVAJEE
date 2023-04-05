@@ -1,5 +1,6 @@
 package presentation;
 
+import dao.exceptions.DaoException;
 import matier.CreditMetier;
 import matier.IMetier;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class CreditControleur implements presentation.ICreditControleur {
         return this.creditMetier=metier;
     }
     @Override
-    public void afficher_Menduaalite(Long idCredit) throws Exception {
+    public void afficher_Menduaalite(Long idCredit) throws Exception, DaoException {
      var creditAvecMensualite =  creditMetier.calculer_Mensualite(idCredit);
         System.out.println(creditAvecMensualite);
     }
